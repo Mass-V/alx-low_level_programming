@@ -1,7 +1,6 @@
 /* printing to standard error */
 
 #include <unistd.h>
-#include <stdio.h>
 
 /**
  * main - using fwrite to print out to stderr the words below
@@ -10,8 +9,9 @@
  */
 int main(void)
 {
-	fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
-	       39, 2, stderr);
+	write(2,
+	       "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
+	       59);
 
 	return (1);
 }
